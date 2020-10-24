@@ -17,6 +17,8 @@ class ServerSocket:
         # data on the connection, and address is the address bound to the socket on the other end of the connection.
         self.connection, addr = self.sock.accept()
 
+    # This single line method it used to send a SMS to the connected client, the message must be in bytes during
+    # transmission thus why we have used encode() method on our string
     def send_message(self, message):
         self.connection.send(message.encode())
 

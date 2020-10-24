@@ -10,6 +10,8 @@ class ClientSocket:
         port_and_ip = ('127.0.0.1', 12345)
         self.sock.connect(port_and_ip)
 
+    # This single line method it used to send a SMS to the connected client, the message must be in bytes during
+    # transmission thus why we have used encode() method on our string
     def send_message(self, message):
         self.sock.send(message.encode())
 
